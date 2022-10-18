@@ -1,0 +1,95 @@
+html{
+    background-color:rgba(9, 113, 240, 0.904);
+    
+}
+
+nav{
+    height:100px;
+}
+
+.container-fluid{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.navbar-brand-centered {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 160px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.navbar>.container .navbar-brand-centered, 
+.navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+}
+
+
+body{
+    overflow-x: hidden; 
+}
+
+.row>div{
+    background-color:transparent;
+}
+
+#inicio_sesion{
+    border: none;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 10px;
+    width:150px;
+    height:40px;
+    padding: 10px;
+
+}
+
+
+.row{
+    background-color:rgba(9, 113, 240, 0.904);
+    padding: 70px;
+}
+
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+
+
+
+footer{
+    height:150px;
+    background-color:lightgray;
+    text-align:center;
+
+}
+
+
+
+
+
+
+/*include SASS
+
+.card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
+
+*/
+
+
+.row{
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
