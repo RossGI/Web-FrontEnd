@@ -183,8 +183,3 @@ body {
     color: #fff;
 }
 
-/* inician los estilos de envios*/
-#columns24hr{
-    column-count: auto;
-    column-gap:50px;
-}
