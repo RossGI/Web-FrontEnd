@@ -285,3 +285,10 @@ body
     color: #163470;
     padding-right: 20px;
 }
+
+
+/* Estilos de Cotizar.html*/
+.form-select{
+    width: 35%;
+    display: inline;
+}

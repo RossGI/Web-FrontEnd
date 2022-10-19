@@ -36,12 +36,55 @@
       </div>
 
       <div class="section">
-        <div class="container2">
+        <div style="width: 90%;" class="container2">
             <h1 class="main-text">Cotizar</h1>
             <hr width="50" size="5" color="#3b7cff">
             <br>
             <p class="main-text-body" id="main-text-body-id">
-               La Paquetería Tamazula es una pequeña empresa de mensajería y paquetería que, actualmente, tiene cuatro sucursales en todo México. Dichas sucursales están ubicadas en Guadalajara, Estado de México, Colima y CD. Guzmán.
+               Ingresa datos solicitados para realizar una cotización
+               <br><br>
+               <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Origen: </span>
+               <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccionar origen</option>
+                  <option value="Guadalajara">Guadalajara</option>
+                  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                  <option value="Cd. Guzman">Cd. Guzmán</option>
+                  <option value="Colima">Colima</option>
+                </select>
+
+                <span style="margin-left: 25px;" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Destino: </span>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Seleccionar destino</option>
+                  <option value="Guadalajara">Guadalajara</option>
+                  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                  <option value="Cd. Guzman">Cd. Guzmán</option>
+                  <option value="Colima">Colima</option>
+                </select>
+
+                <br><br>
+                <span>&nbsp Tipo de envío: </span>
+                <select s class="form-select" aria-label="Default select example">
+                  <option selected>Seleccionar tipo de envío</option>
+                  <option value="Nacional">Nacional</option>
+                  <option value="Especial">Especial</option>
+                </select>
+
+                  <label for="pesoCoti">&nbsp&nbsp Peso en gramos:</label>
+                  <input type="number" name="Peso" id="pesoCoti">
+                  <br><br>
+
+                  <p style="display:inline">
+                  <label for="alturaCoti">&nbsp&nbsp&nbsp Altura en cm:</label>
+                  <input type="number" name="altura" id="alturaCoti">
+
+                  <label for="anchoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Ancho en cm:</label>
+                  <input type="number" name="ancho" id="anchoCoti">
+
+                  <label for="largoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Ancho en cm:</label>
+                  <input type="number" name="largo" id="largoCoti">
+
+                  <br><br>
+                  <a style="margin: 0 auto; display: block; width: 150px;" href="cotizacion.html" class="btn btn-primary">Cotizar</a>
             </p>
         </div>
         <div>
@@ -49,7 +92,7 @@
         </div>
       </div>
 
-      <br><br><br><br><br><br><br>
+      <br><br><br>
       <div>
          <footer class="footer-principal">
             <span class="span-footer-principal">Paquetería Tamazula &reg &nbsp&nbsp&nbsp&nbspTodos los derechos reservados</span>
