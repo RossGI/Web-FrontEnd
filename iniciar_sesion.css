@@ -1,0 +1,104 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: url(fotos_inicio_sesion/cajas2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+}
+
+body::before
+{
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(black, black);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+.form-register
+{
+    width: 500px;
+    background: #5b1219;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'arial';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4
+{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls
+{
+    width: 100%;
+    background: #5b1219;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #BF192A;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.form-register p
+{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.form-register a
+{
+    color:#A67300
+}
+
+.form-register a:hover
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.form-register .botons
+{
+    width: 100%;
+    background: #BF192A;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.form-register .botons:hover
+{
+    width: 100%;
+    background: #A67300;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
