@@ -2,64 +2,47 @@
 <html lang="en-US">
    <head>
       <meta charset="UTF-8">
-      <title>Paquetería Tamazula - Inicio</title>
+      <title>Datos de cotización</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-      <link rel="stylesheet" href="inicio.css" />
+      <link rel="stylesheet" href="cotizacion1.css" />
    </head>
    <body>
-      <div class="navigation">
-         <div class="container">
-            <div class="navbarra">
-               <div class="logo-toggle-container">
-                  <a href="inicio.html">
-                  <img src="fotos_inicio/Paqueteria (2).png" alt="" />
-                  </a>
-                  <span class="toggle-box">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  </span>
-               </div>
-               
-               <ul class="menu">
-                  <li><a href="servicios.html">Servicios</a></li>
-                  <li><a href="envios.html">Envíos</a></li>
-                  <li><a href="destinos_horarios.html">Destinos y horarios</a></li>
-                  <li><a href="sucursales.html">Sucursales</a></li>
-                  <li><a href="crear_cuenta.html">Crear cuenta</a></li>
-                  <a href="iniciar_sesion.html">
-                     <button type="button" class="btn btn-outline-primary">Inicia sesión</button>
-                  </a>
-               </ul>
-            </div>
-         </div>
-      </div>
-
-      <div class="section">
-        <div style="width: 90%;" class="container2">
-            <h1 class="main-text">Cotización</h1>
-            <hr width="50" size="5" color="#3b7cff">
-            <br>
-            <p class="main-text-body" id="main-text-body-id">
-               Al realizar el pago en el banco es necesario envíar su comprobante de pago
-               
-            </p>
-        </div>
-        <div>
-            &nbsp
-        </div>
-      </div>
-
-      <br><br><br><br><br><br><br>
-      <div>
-         <footer class="footer-principal">
-            <span class="span-footer-principal">Paquetería Tamazula &reg &nbsp&nbsp&nbsp&nbspTodos los derechos reservados</span>
-         </footer>
-      </div>
-
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script type="text/javascript" src="inicio.js"></script>
-      
+      <section class="form-register">
+        <h4><b>Datos Cotización</b></h4>
+        <tr>
+            <td><b>Cliente: </b> </td> <td>Gilberto Ybarra</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Origen: </b></td> <td>Tlajomulco de Zúñiga</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Destino: </b></td> <td>Guadalajara, Jal</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Tipo de envío: </b></td> <td>Nacional</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Peso en gramos: </b></td> <td>500</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Medidas: </b> </td> <td>20 x 30 x 30</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Total: </b></td> <td>150 pesos</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Total (texto): </b> </td> <td>ciento cincuenta pesos</td>
+        </tr>
+        <input class="botons" type="submit" value="Ok">
+        <input class="botons" type="submit" value="Editar datos">
+        <input class="botons" type="submit" value="Eliminar cotización">
+      </section>
    </body>
 </html>
