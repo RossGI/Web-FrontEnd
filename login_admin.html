@@ -60,50 +60,49 @@
                               <th scope="col">Nombre</th>
                               <th scope="col">Apellido</th>
                               <th scope="col">Email</th>
-                              <th scope="col">Contraseña</th>
+                              <th scope="col">Telefono</th>
                               <th scope="col">Puesto</th>
                               <th scope="col">Rol</th>
+                              <th scope="col">RFC</th>
+                              <th scope="col">Contraseña</th>
+                              
                            </tr>
                            </thead>
-                           <tbody>
-                           <tr>
-                              <th scope="row">1</th>
-                              <td>Rosario</td>
-                              <td>Mariz</td>
-                              <td>rmariz@paqueteria.com</td>
-                              <td>*******</td>
-                              <td>Gerente</td>
-                              <td>Admin</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">2</th>
-                              <td>Juana</td>
-                              <td>López</td>
-                              <td>jlopez@paqueteria.com</td>
-                              <td>*******</td>
-                              <td>Ventas</td>
-                              <td>Ventas</td>
-                           </tr>
-                           <tr>
-                              <th scope="row">3</th>
-                              <td>Francisco</td>
-                              <td>Ojeda</td>
-                              <td>fojeda@paqueteria.com</td>
-                              <td>*******</td>
-                              <td>Logistica</td>
-                              <td>Logistica</td>
-                           </tr>
+                           <tbody id="contenedor_empleados">
+                           
                            </tbody>
                         </table>
                         <br>
-                        <a style="margin-left: 50px;" href="crear_cuenta_admin.html">
-                           <button type="button" class="btn btn-outline-primary">Nuevo</button>
+                       
+                        <a style="margin-left: 20px;">
+                           <button id="todos_empleados"  type="button" class="btn btn-outline-primary">Todos los empleados</button>
                         </a>
-                        <a style="margin-left: 50px;" href="crear_cuenta_admin.html">
-                           <button type="button" class="btn btn-outline-primary">Editar</button>
+
+                        <label for="buscar_empleado" style="margin-left: 20px;">Buscar empleado</label>
+                        <input type="text" style="width: 20%; display: inline;" id="buscar_empleado" class="form-control" placeholder="id empleado" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="buscar_empleado_boton"  type="button" class="btn btn-outline-primary">Buscar</button>
                         </a>
-                        <a style="margin-left: 50px;" href="crear_cuenta_admin.html">
-                           <button type="button" class="btn btn-outline-primary">Eliminar</button>
+
+
+                        <label for="desactivar_empleado" style="margin-left: 20px;">Eliminar empleado</label>
+                        <input type="text" style="width: 20%; display: inline;" id="desactivar_empleado" class="form-control" placeholder="id empleado" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="desactivar_empleado_boton"  type="button" class="btn btn-outline-danger">Desactivar</button>
+                        </a>
+
+                        <br><br>
+
+                        <a style="margin-left: 5px;" href="crear_empleado.html">
+                           <button id="nuevo_empleado"  type="button" class="btn btn-outline-primary">Nuevo</button>
+                        </a>
+
+
+
+                        <a style="margin-left: 5px;" href="actualizar_empleado.html">
+                           <button id="actualizar_empleado"  type="button" class="btn btn-outline-primary">Actualizar</button>
                         </a>
                      </div>
                   </div>
@@ -132,7 +131,7 @@
                               
                            </tr>
                            </thead>
-                           <tbody id="container">
+                           <tbody id="contenedor_clientes">
                            
                            
                            </tbody>
@@ -145,6 +144,13 @@
                            <option id="activos" value="activos">Activos</option>
                            <option id="no_activos" value="no_activos">No activos</option>
                         </select>
+
+                        <label for="buscar_cliente" style="margin-left: 20px;">Buscar cliente</label>
+                        <input type="text" style="width: 20%; display: inline;" id="buscar_cliente" class="form-control" placeholder="id cliente" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="buscar"  type="button" class="btn btn-outline-primary">Buscar</button>
+                        </a>
 
                        
                         <label for="estatus_clientes" style="margin-left: 20px;">Estatus cliente</label>
@@ -165,8 +171,6 @@
                         </a>
 
 
-                        <label for="actualizar_clientes" style="margin-left: 20px;">Actualizar cliente</label>
-                        <input type="text" style="width: 20%; display: inline;" id="actualizar_clientes" class="form-control" placeholder="id cliente" aria-label="Default select example"></select>
 
                         <a style="margin-left: 5px;" href="actualizar_cliente.html">
                            <button id="actualizar"  type="button" class="btn btn-outline-primary">Actualizar</button>
@@ -310,7 +314,8 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="/assets/scripts/lista_clientes.js"></script>
+      <script src="/assets/scripts/listas.js"></script>
+      
       
    </body>
 </html>
