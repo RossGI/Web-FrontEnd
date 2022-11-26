@@ -1,37 +1,61 @@
 document.addEventListener('DOMContentLoaded',() =>{
 
+    const opciones = document.getElementById("clientes");
+
     const contenedor = document.getElementById('container');
 
     var url = 'http://localhost:3000/clientes?token=123';
+    
 
     listas(contenedor,url);
 
+    opciones.addEventListener("change", function() {
+        if(opciones.value == "todos")
+        {
+            url = 'http://localhost:3000/clientes?token=123';
+            
+        }
 
-    const activos = document.getElementById('activos');
+        else if(opciones.value === "activos"){
+            url = 'http://localhost:3000/clientes?token=123&activos=true';
+            
+        }
 
-    activos.addEventListener('click',function(){
+        else if(opciones.value === "no_activos"){
+            url = 'http://localhost:3000/clientes?token=123&activos=false';
+            
+        }
 
-        url = 'http://localhost:3000/clientes?token=123&activos=true';
         listas(contenedor,url);
-       
+
+    });
+
+    const activar = document.getElementById("activar");
+    const desactivar = document.getElementById("desactivar");
+
+
+    activar.addEventListener("click",function(){
+        const id_cliente = document.getElementById("estatus_clientes").value;
+        
+        axios.put("http://localhost:3000/clientes/"+id_cliente+"/activar?token=123").then(respuesta =>{
+            alert("Cliente activado");
+        }).catch(err =>{
+            alert("No se pudo activar al cliente");
+        })
     })
 
-    const todos = document.getElementById('todos');
 
-    todos.addEventListener('click',function(){
-        url = 'http://localhost:3000/clientes?token=123';
-        listas(contenedor,url);
+    desactivar.addEventListener("click",function(){
+        const id_cliente = document.getElementById("estatus_clientes").value;
+        
+        axios.delete("http://localhost:3000/clientes/"+id_cliente+"?token=123").then(respuesta =>{
+            alert("Cliente desactivado");
+        }).catch(err =>{
+            alert("No se pudo desactivar al cliente");
+        })
     })
-
-    const no_activos = document.getElementById('no_activos');
-
-    no_activos.addEventListener('click',function(){
-        url = 'http://localhost:3000/clientes?token=123&activos=false';
-        listas(contenedor,url);
-    })
-
-
-   
+    
+    
 
 
 });
@@ -52,13 +76,16 @@ function listas(contenedor,url){
     
         const clientes = respuesta.data;
        
-        const container = document.getElementById('container');
+      
 
         clientes.forEach(cliente => {
         
-           
+
 
             const fila = document.createElement('tr');
+
+          
+
             const id = document.createElement('td');
             const nombre = document.createElement('td');
             const apellido = document.createElement('td');
@@ -68,6 +95,9 @@ function listas(contenedor,url){
             const rfc = document.createElement('td');
             const contraseña = document.createElement('td');
             const estatus = document.createElement('td');
+
+
+            const datos_cliente = [id,nombre,apellido,correo,telefono,direccion,rfc,contraseña,estatus];
 
 
             id.innerText = cliente._id;
@@ -99,22 +129,13 @@ function listas(contenedor,url){
                 );
             }
            
-            
 
-            fila.append(id);
-            fila.append(nombre);
-            fila.append(apellido);
-            fila.append(correo);
-            fila.append(telefono);
-            fila.append(direccion);
-            fila.append(rfc);
-            fila.append(contraseña);
-            fila.append(estatus);
-           
-
-            container.append(fila);
+            datos_cliente.forEach(dato=>{
+                fila.append(dato);
+            });
 
 
+            contenedor.append(fila);
     
             
         });

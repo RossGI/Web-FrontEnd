@@ -139,19 +139,40 @@
                         </table>
                         <br>
 
+                        <label for="clientes">Traer clientes</label>
+                        <select style="width: 10%; display: inline;" id="clientes" class="form-select" aria-label="Default select example">
+                           <option selected id="todos" value="todos">Todos</option>
+                           <option id="activos" value="activos">Activos</option>
+                           <option id="no_activos" value="no_activos">No activos</option>
+                        </select>
 
-                        <a style="margin-left: 50px;" href="crear_cliente.html">
+                       
+                        <label for="estatus_clientes" style="margin-left: 20px;">Estatus cliente</label>
+                        <input type="text" style="width: 20%; display: inline;" id="estatus_clientes" class="form-control" placeholder="id cliente" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="activar"  type="button" class="btn btn-outline-success">Activar</button>
+                        </a>
+
+                        <a style="margin-left: 20px;">
+                           <button id="desactivar"  type="button" class="btn btn-outline-danger">Desactivar</button>
+                        </a>
+
+                        <br><br>
+
+                        <a style="margin-left: 5px;" href="crear_cliente.html">
                            <button id="nuevo_cliente"  type="button" class="btn btn-outline-primary">Nuevo</button>
                         </a>
-                        <a style="margin-left: 50px;">
-                           <button id="todos"  type="button" class="btn btn-outline-primary">Todos los clientes</button>
+
+
+                        <label for="actualizar_clientes" style="margin-left: 20px;">Actualizar cliente</label>
+                        <input type="text" style="width: 20%; display: inline;" id="actualizar_clientes" class="form-control" placeholder="id cliente" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 5px;" href="actualizar_cliente.html">
+                           <button id="actualizar"  type="button" class="btn btn-outline-primary">Actualizar</button>
                         </a>
-                        <a style="margin-left: 50px;">
-                           <button id="activos"  type="button" class="btn btn-outline-primary">Activos</button>
-                        </a>
-                        <a style="margin-left: 50px;">
-                           <button id="no_activos"  type="button" class="btn btn-outline-primary">No Activos</button>
-                        </a>
+                       
+                        
 
                      </div>
                   </div>
