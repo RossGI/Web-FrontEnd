@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded',() =>{
 
+    //Clientes 
+
     const opciones = document.getElementById("clientes");
 
-    const contenedor = document.getElementById('contenedor_clientes');
+    const contenedor_clientes = document.getElementById('contenedor_clientes');
 
     var url = 'http://localhost:3000/clientes?token=123';
 
-    
-
-    listas_clientes(contenedor,url);
+    listarClientes(contenedor_clientes,url);
 
     opciones.addEventListener("change", function() {
         if(opciones.value == "todos")
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             
         }
 
-        listas_clientes(contenedor,url);
+        listarClientes(contenedor_clientes,url);
 
 
     });
@@ -64,10 +64,13 @@ document.addEventListener('DOMContentLoaded',() =>{
     buscar.addEventListener("click",function(){
         const buscar_cliente = document.getElementById("buscar_cliente").value;
         url = "http://localhost:3000/clientes/"+buscar_cliente+"?token=123";
-        listas_cliente(contenedor,url);
+        listarUnCliente(contenedor_clientes,url);
     })
 
     
+
+    //Empleados 
+//-----------------------------------------------------------------------------------------------------
 
 
     const contenedor_empleados = document.getElementById('contenedor_empleados');
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     var url_empleados = 'http://localhost:3000/empleados?token=123';
     
 
-    listas_empleados(contenedor_empleados,url_empleados);
+    listarEmpleados(contenedor_empleados,url_empleados);
 
 
 
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     todos_empleados.addEventListener("click",function(){
         url_empleados = "http://localhost:3000/empleados?token=123";
-        listas_empleados(contenedor_empleados,url_empleados);
+        listarEmpleados(contenedor_empleados,url_empleados);
     })
 
 
@@ -92,7 +95,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     buscar_empleado_boton.addEventListener("click",function(){
         const buscar_empleado = document.getElementById("buscar_empleado").value;
         url_empleados = "http://localhost:3000/empleados/"+buscar_empleado+"?token=123";
-        listas_empleado(contenedor_empleados,url_empleados);
+        listarUnEmpleado(contenedor_empleados,url_empleados);
     })
 
 
@@ -103,7 +106,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     desactivar_empleado_boton.addEventListener("click",function(){
         const desactivar_empleado = document.getElementById("desactivar_empleado").value;
         
-        axios.delete("http://localhost:3000/clientes/"+desactivar_empleado+"?token=123").then(respuesta =>{
+        axios.delete("http://localhost:3000/empleados/"+desactivar_empleado+"?token=123").then(respuesta =>{
             alert("empleado eliminado");
         }).catch(err =>{
             alert("No se pudo eliminar al empleado");
@@ -119,23 +122,16 @@ document.addEventListener('DOMContentLoaded',() =>{
 
 
 
-function listas_clientes(contenedor,url){
+function listarClientes(contenedor,url){
 
-
-    while(contenedor.firstChild){
-        contenedor.removeChild(contenedor.lastChild);
-    }
-
-    
+    contenedor.innerHTML = '';
 
     axios.get(url).then(respuesta =>{
        
         
-    
         const clientes = respuesta.data;
    
-
-      
+  
         for (let i = 0; i < clientes.length; i++) {
             const fila = document.createElement('tr');
             const id = document.createElement('td');
@@ -199,17 +195,14 @@ function listas_clientes(contenedor,url){
 
 
 
-function listas_cliente(contenedor,url){
+function listarUnCliente(contenedor,url){
 
 
-    while(contenedor.firstChild){
-        contenedor.removeChild(contenedor.lastChild);
-    }
+    contenedor.innerHTML = '';
 
     
     axios.get(url).then(respuesta =>{
        
-        
     
         const clientes = respuesta.data;
    
@@ -271,18 +264,18 @@ function listas_cliente(contenedor,url){
         
         
 
-    });
+    }).catch(err =>{
+        alert("No se encontró al cliente");
+    })
 }
 
 
 
 
-function listas_empleados(contenedor,url){
+function listarEmpleados(contenedor,url){
 
 
-    while(contenedor.firstChild){
-        contenedor.removeChild(contenedor.lastChild);
-    }
+    contenedor.innerHTML = '';
 
     axios.get(url).then(respuesta =>{
        
@@ -351,12 +344,10 @@ function listas_empleados(contenedor,url){
 
 
 
-function listas_empleado(contenedor,url){
+function listarUnEmpleado(contenedor,url){
 
 
-    while(contenedor.firstChild){
-        contenedor.removeChild(contenedor.lastChild);
-    }
+    contenedor.innerHTML = '';
 
     
     axios.get(url).then(respuesta =>{
@@ -411,5 +402,7 @@ function listas_empleado(contenedor,url){
 
             
     
-    });
+    }).catch(err =>{
+        alert("No se encontró al empleado");
+    })
 }

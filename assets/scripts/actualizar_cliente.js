@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded',() =>{
         const contraseña = document.getElementById("password").value;
         const rfc = document.getElementById("rfc").value;
 
-      
-        
         
         const datos = {
             nombre: nombre,
