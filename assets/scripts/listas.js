@@ -150,6 +150,42 @@ document.addEventListener('DOMContentLoaded',() =>{
     });
 
 
+    const activar_cotizacion = document.getElementById("activar_cotizacion");
+    const desactivar_cotizacion = document.getElementById("desactivar_cotizacion");
+
+
+    activar_cotizacion.addEventListener("click",function(){
+        const id_cotizacion = document.getElementById("estatus_cotizaciones").value;
+        
+        axios.put("http://localhost:3000/cotizaciones/"+id_cotizacion+"/activar?token=123").then(respuesta =>{
+            alert("Cotización activada");
+        }).catch(err =>{
+            alert("No se pudo activar la cotización");
+        })
+    })
+
+
+    desactivar_cotizacion.addEventListener("click",function(){
+        const id_cotizacion = document.getElementById("estatus_cotizaciones").value;
+        
+        axios.delete("http://localhost:3000/cotizaciones/"+id_cotizacion+"?token=123").then(respuesta =>{
+            alert("Cotización desactivada");
+        }).catch(err =>{
+            alert("No se pudo desactivar la cotización");
+        })
+    })
+
+
+    const buscar_cotizacion_boton = document.getElementById("buscar_cotizacion_boton");
+
+    buscar_cotizacion_boton.addEventListener("click",function(){
+        const buscar_cotizacion = document.getElementById("buscar_cotizacion").value;
+        url_cotizaciones = "http://localhost:3000/cotizaciones/"+buscar_cotizacion+"?token=123";
+        listarUnaCotizacion(contenedor_cotizaciones,url_cotizaciones);
+    })
+
+
+
 
 });
 
@@ -457,6 +493,7 @@ function listarCotizaciones(contenedor,url){
         for (let i = 0; i < cotizaciones.length; i++) {
             const fila = document.createElement('tr');
             const id = document.createElement('td');
+            const id_cliente = document.createElement('td');
             const fechacotizacion = document.createElement('td');
             const origen = document.createElement('td');
             const destino = document.createElement('td');
@@ -468,10 +505,11 @@ function listarCotizaciones(contenedor,url){
             const estatus = document.createElement('td');
 
 
-            const datos_cotizacion = [id,fechacotizacion,origen,destino,tipoenvio,pesogr,medidas,fechaentrega,total,estatus];
+            const datos_cotizacion = [id,id_cliente,fechacotizacion,origen,destino,tipoenvio,pesogr,medidas,fechaentrega,total,estatus];
 
 
             id.innerText = cotizaciones[i]._id;
+            id_cliente.innerText = cotizaciones[i].referencia;
             fechacotizacion.innerText = cotizaciones[i].fechacotizacion;
             origen.innerText = cotizaciones[i].origen;
             destino.innerText = cotizaciones[i].destino;
@@ -490,15 +528,17 @@ function listarCotizaciones(contenedor,url){
             );
 
             if(estatus.innerText === '1'){
+                estatus.innerText = "Pendiente";
                 estatus.setAttribute(
                     'style',
-                    'background-color: green; color: white;',
+                    'background-color: gray; color: white;',
                 );
             }
             else{
+                estatus.innerText = "Atendido";
                 estatus.setAttribute(
                     'style',
-                    'background-color: salmon; color: white;',
+                    'background-color: red; color: white;',
                 );
             }
            
@@ -512,6 +552,89 @@ function listarCotizaciones(contenedor,url){
 
             
         }
+        
+        
+
+    });
+}
+
+
+
+
+
+
+function listarUnaCotizacion(contenedor,url){
+
+    contenedor.innerHTML = '';
+
+    axios.get(url).then(respuesta =>{
+       
+        
+        const cotizaciones = respuesta.data;
+   
+  
+        
+            const fila = document.createElement('tr');
+            const id = document.createElement('td');
+            const id_cliente = document.createElement('td');
+            const fechacotizacion = document.createElement('td');
+            const origen = document.createElement('td');
+            const destino = document.createElement('td');
+            const tipoenvio = document.createElement('td');
+            const pesogr = document.createElement('td');
+            const medidas = document.createElement('td');
+            const fechaentrega = document.createElement('td');
+            const total = document.createElement('td');
+            const estatus = document.createElement('td');
+
+
+            const datos_cotizacion = [id,id_cliente,fechacotizacion,origen,destino,tipoenvio,pesogr,medidas,fechaentrega,total,estatus];
+
+
+            id.innerText = cotizaciones._id;
+            id_cliente.innerText = cotizaciones.referencia;
+            fechacotizacion.innerText = cotizaciones.fechacotizacion;
+            origen.innerText = cotizaciones.origen;
+            destino.innerText = cotizaciones.destino;
+            tipoenvio.innerText = cotizaciones.tipoenvio;
+            pesogr.innerText = cotizaciones.pesogr;
+            medidas.innerText = cotizaciones.largo + "x" +  cotizaciones.ancho + "x" +  cotizaciones.alto;
+            fechaentrega.innerText = cotizaciones.fechaentrega;
+            total.innerText = cotizaciones.total;
+            estatus.innerText = cotizaciones.status;
+            
+            
+
+            id.setAttribute(
+                'style',
+                'font-weight: bold;',
+            );
+
+            if(estatus.innerText === '1'){
+                estatus.innerText = "Pendiente";
+                estatus.setAttribute(
+                    'style',
+                    'background-color: gray; color: white;',
+                );
+            }
+            else{
+                estatus.innerText = "Atendido";
+                estatus.setAttribute(
+                    'style',
+                    'background-color: red; color: white;',
+                );
+            }
+           
+
+            datos_cotizacion.forEach(dato=>{
+                fila.append(dato);
+            });
+
+
+            contenedor.append(fila);
+
+            
+        
         
         
 

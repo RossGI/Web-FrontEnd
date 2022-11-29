@@ -193,15 +193,16 @@
                         <table class="table">
                            <thead>
                               <tr>
-                                 <th scope="col">Número<br> de<br> Cotización</th>
-                                 <th scope="col">Fecha de craeación</th>
+                                 <th scope="col">Id Cotización</th>
+                                 <th scope="col">Id cliente</th>
+                                 <th scope="col">Fecha de creación</th>
                                  <th scope="col">Origen</th>
                                  <th scope="col">Destino</th>
                                  <th scope="col">Tipo de envío</th>
                                  <th scope="col">Peso (gr)</th>
-                                 <th scope="col">Medidas</th>
+                                 <th scope="col">Medidas (largo, ancho, alto)</th>
                                  <th scope="col">Fecha de entrega</th>
-                                 <th scope="col">Total</th>
+                                 <th scope="col">Total (MXN)</th>
                                  <th scope="col">Estatus</th>
                                  <th scope="col"></th>
                               </tr>
@@ -244,6 +245,43 @@
                            <option id="cotizacionesActivas" value="activos">Activos</option>
                            <option id="cotizacionesNoActivas" value="no_activos">No activos</option>
                         </select>
+
+
+                        <label for="buscar_cotizacion" style="margin-left: 20px;">Buscar</label>
+                        <input type="text" style="width: 20%; display: inline;" id="buscar_cotizacion" class="form-control" placeholder="id cotizacion" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="buscar_cotizacion_boton"  type="button" class="btn btn-outline-primary">Buscar</button>
+                        </a>
+
+                       
+                        <label for="estatus_cotizaciones" style="margin-left: 20px;">Estatus</label>
+                        <input type="text" style="width: 20%; display: inline;" id="estatus_cotizaciones" class="form-control" placeholder="id cotizacion" aria-label="Default select example"></select>
+
+                        <a style="margin-left: 20px;">
+                           <button id="activar_cotizacion"  type="button" class="btn btn-outline-success">Activar</button>
+                        </a>
+
+                        <a style="margin-left: 20px;">
+                           <button id="desactivar_cotizacion"  type="button" class="btn btn-outline-danger">Desactivar</button>
+                        </a>
+
+                        <br><br>
+
+                        <a style="margin-left: 5px;" href="crear_cotizacion_admin.html">
+                           <button id="nuevo_cotizacion"  type="button" class="btn btn-outline-primary">Nuevo</button>
+                        </a>
+
+
+
+                        <a style="margin-left: 5px;" href="actualizar_cotizacion_admin.html">
+                           <button id="actualizar_cotizacion"  type="button" class="btn btn-outline-primary">Actualizar</button>
+                        </a>
+                       
+
+
+
+
                      </div>
                   </div>
                </div>

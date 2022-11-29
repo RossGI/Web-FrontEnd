@@ -1,11 +1,11 @@
-
 document.addEventListener('DOMContentLoaded',() =>{
     const formulario = document.getElementById('formulario_cotizar');
-    
-    
+
     formulario.addEventListener('submit',(e) =>{
         console.log('Evento submit', e);
         e.preventDefault();
+
+        const id = document.getElementById("id_cotizacion");
         const fecha = new Date();
         const anio = fecha.getFullYear();
         const mes = fecha.getMonth() + 1;
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         const origen = document.getElementById("origenCoti").value;
         const destino = document.getElementById("destinoCoti").value;
         const tipoenvio = document.getElementById("tipoenvioCoti").value;
-        
+        const id_cliente = document.getElementById('id_cliente').value;
         const entrega_horas = document.getElementById("fechaentregaCoti");
 
         var dias = 1;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             dias = 3;
             variantes+=20
         }
-       
+      
 
         const entrega_formato = new Date();
         entrega_formato.setDate(fecha.getDate() + dias);
@@ -51,9 +51,10 @@ document.addEventListener('DOMContentLoaded',() =>{
         variantes = parseInt(variantes);
 
         const total = parseInt((alto + largo + ancho) + variantes + (pesogr/2));
-        
+
         
         const datos = {
+            referencia: id_cliente,
             fechacotizacion: fechacotizacion,
             origen: origen,
             destino: destino,
@@ -67,21 +68,11 @@ document.addEventListener('DOMContentLoaded',() =>{
             
         }
 
-        
-        
-
-        axios.post('http://localhost:3000/cotizaciones?token=123',datos).then(respuesta =>{
+        axios.put('http://localhost:3000/cotizaciones/'+id.value+'?token=123',datos).then(respuesta =>{
             console.log('Token',respuesta.data);
-            window.location = '/cotizacion1.html';
-    
+            window.location = '/login_admin.html';
         });
-
-
 
     })
 
-
-
 })
-
-
