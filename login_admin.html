@@ -194,16 +194,19 @@
                            <thead>
                               <tr>
                                  <th scope="col">Número<br> de<br> Cotización</th>
-                                 <th scope="col">Fecha</th>
+                                 <th scope="col">Fecha de craeación</th>
                                  <th scope="col">Origen</th>
                                  <th scope="col">Destino</th>
-                                 <th scope="col">Peso</th>
+                                 <th scope="col">Tipo de envío</th>
+                                 <th scope="col">Peso (gr)</th>
                                  <th scope="col">Medidas</th>
+                                 <th scope="col">Fecha de entrega</th>
+                                 <th scope="col">Total</th>
                                  <th scope="col">Estatus</th>
                                  <th scope="col"></th>
                               </tr>
                            </thead>
-                           <tbody>
+                           <tbody id="contenedor_cotizaciones">
                               <tr>
                                  <th scope="row">1</th>
                                  <td>10 oct 22</td>
@@ -234,6 +237,13 @@
                               </tr>
                            </tbody>
                         </table>
+
+                        <label for="cotizaciones">Traer cotizaciones</label>
+                        <select style="width: 10%; display: inline;" id="cotizaciones" class="form-select" aria-label="Default select example">
+                           <option selected id="cotizacionesTodas" value="todos">Todos</option>
+                           <option id="cotizacionesActivas" value="activos">Activos</option>
+                           <option id="cotizacionesNoActivas" value="no_activos">No activos</option>
+                        </select>
                      </div>
                   </div>
                </div>

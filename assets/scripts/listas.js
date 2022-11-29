@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     listarClientes(contenedor_clientes,url);
 
     opciones.addEventListener("change", function() {
-        if(opciones.value == "todos")
+        if(opciones.value === "todos")
         {
             url = 'http://localhost:3000/clientes?token=123';
             
@@ -113,6 +113,41 @@ document.addEventListener('DOMContentLoaded',() =>{
         })
     })
 
+
+            //Cotizaciones
+
+    //------------------------------------------------------------------------------------------------------------
+
+
+    const opciones_cotizaciones = document.getElementById("cotizaciones");
+
+    const contenedor_cotizaciones = document.getElementById('contenedor_cotizaciones');
+
+    var url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123';
+
+    listarCotizaciones(contenedor_cotizaciones,url_cotizaciones);
+
+    opciones_cotizaciones.addEventListener("change", function() {
+        if(opciones_cotizaciones.value === "todos")
+        {
+            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123';
+            
+        }
+
+        else if(opciones_cotizaciones.value === "activos"){
+            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123&activos=true';
+            
+        }
+
+        else if(opciones_cotizaciones.value === "no_activos"){
+            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123&activos=false';
+            
+        }
+
+        listarCotizaciones(contenedor_cotizaciones,url_cotizaciones);
+
+
+    });
 
 
 
@@ -405,4 +440,80 @@ function listarUnEmpleado(contenedor,url){
     }).catch(err =>{
         alert("No se encontró al empleado");
     })
+}
+
+
+
+function listarCotizaciones(contenedor,url){
+
+    contenedor.innerHTML = '';
+
+    axios.get(url).then(respuesta =>{
+       
+        
+        const cotizaciones = respuesta.data;
+   
+  
+        for (let i = 0; i < cotizaciones.length; i++) {
+            const fila = document.createElement('tr');
+            const id = document.createElement('td');
+            const fechacotizacion = document.createElement('td');
+            const origen = document.createElement('td');
+            const destino = document.createElement('td');
+            const tipoenvio = document.createElement('td');
+            const pesogr = document.createElement('td');
+            const medidas = document.createElement('td');
+            const fechaentrega = document.createElement('td');
+            const total = document.createElement('td');
+            const estatus = document.createElement('td');
+
+
+            const datos_cotizacion = [id,fechacotizacion,origen,destino,tipoenvio,pesogr,medidas,fechaentrega,total,estatus];
+
+
+            id.innerText = cotizaciones[i]._id;
+            fechacotizacion.innerText = cotizaciones[i].fechacotizacion;
+            origen.innerText = cotizaciones[i].origen;
+            destino.innerText = cotizaciones[i].destino;
+            tipoenvio.innerText = cotizaciones[i].tipoenvio;
+            pesogr.innerText = cotizaciones[i].pesogr;
+            medidas.innerText = cotizaciones[i].largo + "x" +  cotizaciones[i].ancho + "x" +  cotizaciones[i].alto;
+            fechaentrega.innerText = cotizaciones[i].fechaentrega;
+            total.innerText = cotizaciones[i].total;
+            estatus.innerText = cotizaciones[i].status;
+            
+            
+
+            id.setAttribute(
+                'style',
+                'font-weight: bold;',
+            );
+
+            if(estatus.innerText === '1'){
+                estatus.setAttribute(
+                    'style',
+                    'background-color: green; color: white;',
+                );
+            }
+            else{
+                estatus.setAttribute(
+                    'style',
+                    'background-color: salmon; color: white;',
+                );
+            }
+           
+
+            datos_cotizacion.forEach(dato=>{
+                fila.append(dato);
+            });
+
+
+            contenedor.append(fila);
+
+            
+        }
+        
+        
+
+    });
 }

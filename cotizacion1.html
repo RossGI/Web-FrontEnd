@@ -7,46 +7,48 @@
       <link rel="stylesheet" href="cotizacion1.css" />
    </head>
    <body>
-      <section class="form-register">
+
+      <form class="form-register" id="formulario_cotizacion">
         <h4><b>Datos Cotización</b></h4>
         <tr>
             <td><b>Cliente: </b> </td> <td>Gilberto Ybarra</td>
         </tr>
         <br>
         <tr>
-            <td><b>Origen: </b></td> <td>Tlajomulco de Zúñiga</td>
+            <td><b>Origen: </b></td> <td id="origen"></td>
         </tr>
         <br>
         <tr>
-            <td><b>Destino: </b></td> <td>Guadalajara, Jal</td>
+            <td><b>Destino: </b></td> <td id="destino"></td>
         </tr>
         <br>
         <tr>
-            <td><b>Tipo de envío: </b></td> <td>Nacional</td>
+            <td><b>Tipo de envío: </b></td> <td id="tipoenvio"></td>
         </tr>
         <br>
         <tr>
-            <td><b>Peso en gramos: </b></td> <td>500</td>
+            <td><b>Peso en gramos: </b></td> <td id="peso"></td>
         </tr>
         <br>
         <tr>
-            <td><b>Medidas: </b> </td> <td>20 x 30 x 30</td>
+            <td><b>Medidas: </b> </td> <td id="medidas"></td>
         </tr>
         <br>
         <tr>
-            <td><b>Total: </b></td> <td>150 pesos</td>
+            <td><b>Total: </b></td> <td id="total"></td>
         </tr>
         <br>
-        <tr>
-            <td><b>Total (texto): </b> </td> <td>ciento cincuenta pesos</td>
-        </tr>
+       
         <input class="botons" type="submit" value="Ok">
         <a href="editarDatosCotizacion.html">
             <input class="botons" type="submit" value="Editar datos">
         </a>
         <input class="botons" type="submit" value="Eliminar cotización">
         <p><a href="inicio.html">Ir a inicio</a></p>
-      </section>
+    </form>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
+      <script src="./assets/scripts/listar_cotizacion.js"></script>
+      
     </body>
 </html>

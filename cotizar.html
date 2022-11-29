@@ -43,54 +43,78 @@
             <p class="main-text-body" id="main-text-body-id">
                Ingresa datos solicitados para realizar una cotización
                <br><br>
-               <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Origen: </span>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Seleccionar origen</option>
-                  <option value="Guadalajara">Guadalajara</option>
-                  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
-                  <option value="Cd. Guzman">Cd. Guzmán</option>
-                  <option value="Colima">Colima</option>
-                </select>
 
-                <span style="margin-left: 25px;" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Destino: </span>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Seleccionar destino</option>
-                  <option value="Guadalajara">Guadalajara</option>
-                  <option value="Ciudad de Mexico">Ciudad de Mexico</option>
-                  <option value="Cd. Guzman">Cd. Guzmán</option>
-                  <option value="Colima">Colima</option>
-                </select>
 
-                <br><br>
-                <span>&nbsp Tipo de envío: </span>
-                <select s class="form-select" aria-label="Default select example">
-                  <option selected>Seleccionar tipo de envío</option>
-                  <option value="Nacional">Nacional</option>
-                  <option value="Especial">Especial</option>
-                </select>
+               <form id="formulario_cotizar" class="form-register">
 
-                  <label for="pesoCoti">&nbsp&nbsp Peso en gramos:</label>
-                  <input type="number" name="Peso" id="pesoCoti">
-                  <br><br>
 
-                  <p style="display:inline">
-                  <label for="alturaCoti">&nbsp&nbsp&nbsp Altura en cm:</label>
-                  <input type="number" name="altura" id="alturaCoti">
+                  <span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Origen: </span>
+                  <select class="form-select" aria-label="Default select example" id="origenCoti" required>
+                     <option value="">Seleccionar origen</option>
+                     <option value="Guadalajara">Guadalajara</option>
+                     <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                     <option value="Cd. Guzman">Cd. Guzmán</option>
+                     <option value="Colima">Colima</option>
+                   </select>
+   
+                   <span style="margin-left: 25px;" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Destino: </span>
+                   <select class="form-select" aria-label="Default select example" id="destinoCoti" required>
+                     <option value="">Seleccionar destino</option>
+                     <option value="Guadalajara">Guadalajara</option>
+                     <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                     <option value="Cd. Guzman">Cd. Guzmán</option>
+                     <option value="Colima">Colima</option>
+                   </select>
+   
+                   <br><br>
+                   <span>&nbsp Tipo de envío: </span>
+                   <select s class="form-select" aria-label="Default select example" id="tipoenvioCoti" required>
+                     <option value="">Seleccionar tipo de envío</option>
+                     <option value="Nacional">Nacional</option>
+                     <option value="Especial">Especial</option>
+                   </select>
 
-                  <label for="anchoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Anchura en cm:</label>
-                  <input type="number" name="ancho" id="anchoCoti">
+   
+                     <label for="pesoCoti">&nbsp&nbsp Peso en gramos:</label>
+                     <input type="number" name="Peso" id="pesoCoti" min="0" required>
+                     <br><br>
+   
+                     <p style="display:inline">
+                     <label for="alturaCoti">&nbsp&nbsp&nbsp Alto en cm:</label>
+                     <input type="number" name="altura" id="alturaCoti" min="0" required>
+   
+                     <label for="anchoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Ancho en cm:</label>
+                     <input type="number" name="ancho" id="anchoCoti" min="0" required>
+   
+                     <label for="largoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Largo en cm:</label>
+                     <input type="number" name="largo" id="largoCoti" min="0" required>
+   
+                     <br><br>
+   
+                     <span>&nbsp Fecha de entrega: </span>
+                     <select s class="form-select" aria-label="Default select example" id="fechaentregaCoti" required>
+                       <option value="">Seleccionar fecha de entrega</option>
+                       <option value="24horas">24 horas</option>
+                       <option value="42horas">48 horas</option>
+                       <option value="72horas">72 horas</option>
+                     </select>
+   
+                     <br><br>
+                     <button style="margin: 0 auto; display: block; width: 150px;" href="cotizacion1.html" class="btn btn-primary" type="submit">Cotizar</button>
+                     </p>
+                     </div>
+                        <div>
+                        &nbsp
+                        </div>
+                     </div>
 
-                  <label for="largoCoti">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Longitud en cm:</label>
-                  <input type="number" name="largo" id="largoCoti">
 
-                  <br><br>
-                  <a style="margin: 0 auto; display: block; width: 150px;" href="cotizacion1.html" class="btn btn-primary">Cotizar</a>
-            </p>
-        </div>
-        <div>
-            &nbsp
-        </div>
-      </div>
+
+
+               </form>
+
+
+              
 
       <br><br><br>
       <div>
@@ -99,9 +123,9 @@
          </footer>
       </div>
 
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script type="text/javascript" src="inicio.js"></script>
+      <script src="./assets/scripts/crear_cotizacion.js"></script>
       
    </body>
 </html>
