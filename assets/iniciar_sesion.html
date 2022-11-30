@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <title>Iniciar sesión</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <link rel="stylesheet" href="./styles/iniciar_sesion.css" />
+   </head>
+   <body>
+      <form class="form-register" id="formulario">
+        <h4>Inicia sesión</h4>
+        <input class="controls" type="email" name="email" id="correo" placeholder="Ingrese su correo" required>
+        <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su password" required>
+        
+        <button style="width:100%; text-align: center;" href="sesion_abierta_cliente.html" class="botons" type="submit">Iniciar Sesión</button>
+
+        <p style="margin: 0;"><a href="crear_cuenta.html">No tengo cuenta</a></p>
+        <p style="margin: 0;"><a href="inicio.html">Página de inicio</a></p>
+        <p style="margin: 0;"><a href="loginTemporal.html">Soy Empleado</a></p>
+      </form>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
+      <script src="./iniciar_sesion.js"></script>
+   </body>
+</html>

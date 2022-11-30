@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <title>Datos de cotización</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+      <link rel="stylesheet" href="../assets/styles/cotizacion1.css" />
+   </head>
+   <body>
+
+      <form class="form-register" id="formulario_cotizacion">
+        <h4><b>Datos Cotización</b></h4>
+        <tr>
+            <td><b>Cliente: </b> </td> <td>Gilberto Ybarra</td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Origen: </b></td> <td id="origen"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Destino: </b></td> <td id="destino"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Tipo de envío: </b></td> <td id="tipoenvio"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Peso en gramos: </b></td> <td id="peso"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Medidas: </b> </td> <td id="medidas"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><b>Total: </b></td> <td id="total"></td>
+        </tr>
+        <br>
+       
+        <input class="botons" type="submit" value="Ok">
+        <a href="editarDatosCotizacion.html">
+            <input class="botons" type="submit" value="Editar datos">
+        </a>
+        <input class="botons" type="submit" value="Eliminar cotización">
+        <p><a href="inicio.html">Ir a inicio</a></p>
+    </form>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
+      <script src="./listar_cotizacion.js"></script>
+      
+    </body>
+</html>
