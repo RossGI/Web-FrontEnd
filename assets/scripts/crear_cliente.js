@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded',() =>{
             window.location = '/login_admin.html';
         });
 
+
+    
+
     })
 
 })

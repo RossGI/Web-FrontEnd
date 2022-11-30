@@ -7,16 +7,19 @@
       <link rel="stylesheet" href="iniciar_sesion.css" />
    </head>
    <body>
-      <section class="form-register">
+      <form class="form-register" id="formulario">
         <h4>Inicia sesión</h4>
-        <input class="controls" type="text" name="email" id="correo" placeholder="Ingrese su correo">
-        <input class="controls" type="text" name="password" id="password" placeholder="Ingrese su password">
+        <input class="controls" type="email" name="email" id="correo" placeholder="Ingrese su correo" required>
+        <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su password" required>
         
-        <a style="width:100%; text-align: center;" href="sesion_abierta_cliente.html" class="botons" type="submit">Iniciar Sesión</a>
+        <button style="width:100%; text-align: center;" href="sesion_abierta_cliente.html" class="botons" type="submit">Iniciar Sesión</button>
 
         <p style="margin: 0;"><a href="crear_cuenta.html">No tengo cuenta</a></p>
         <p style="margin: 0;"><a href="inicio.html">Página de inicio</a></p>
         <p style="margin: 0;"><a href="loginTemporal.html">Soy Empleado</a></p>
-      </section>
+      </form>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.min.js"></script>
+      <script src="./assets/scripts/iniciar_sesion.js"></script>
    </body>
 </html>
