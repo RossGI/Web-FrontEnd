@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const app = express();
 
-const port = process.env.PORT || 5000;
+const port = 4200;
 
 app.use('/',express.static(__dirname + '/assets'));
 

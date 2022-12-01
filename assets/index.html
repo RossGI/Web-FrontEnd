@@ -11,7 +11,7 @@
          <div class="container">
             <div class="navbarra">
                <div class="logo-toggle-container">
-                  <a href="./inicio.html">
+                  <a href="./index.html">
                   <img src="../images/fotos_inicio/Paqueteria (2).png" alt="" />
                   </a>
                   <span class="toggle-box">
@@ -28,8 +28,11 @@
                   <li><a href="sucursales.html">Sucursales</a></li>
                   <li><a href="cotizar.html">Cotizar</a></li>
                   <li><a href="crear_cuenta.html">Crear cuenta</a></li>
-                  <a href="iniciar_sesion.html">
+                  <a id="iniciarSesion" href="iniciar_sesion.html" style="display: contents">
                      <button type="button" class="btn btn-outline-primary">Inicia sesión</button>
+                  </a>
+                  <a id="cerrarSesion" style="display: none">
+                     <button type="button" class="btn btn-outline-primary" onclick="cerrarSesion()">Cerrar sesión</button>
                   </a>
                </ul>
                
@@ -128,6 +131,9 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script type="text/javascript" src="inicio.js"></script>
+      <script>
+         start();
+      </script>
       
    </body>
 </html>
