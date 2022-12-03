@@ -6,24 +6,24 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     const contenedor_clientes = document.getElementById('contenedor_clientes');
 
-    var url = 'http://localhost:3000/clientes?token=123';
+    var url = 'https://paqueteria-backend.herokuapp.com/clientes?token=123';
 
     listarClientes(contenedor_clientes,url);
 
     opciones.addEventListener("change", function() {
         if(opciones.value === "todos")
         {
-            url = 'http://localhost:3000/clientes?token=123';
+            url = 'https://paqueteria-backend.herokuapp.com/clientes?token=123';
             
         }
 
         else if(opciones.value === "activos"){
-            url = 'http://localhost:3000/clientes?token=123&activos=true';
+            url = 'https://paqueteria-backend.herokuapp.com/clientes?token=123&activos=true';
             
         }
 
         else if(opciones.value === "no_activos"){
-            url = 'http://localhost:3000/clientes?token=123&activos=false';
+            url = 'https://paqueteria-backend.herokuapp.com/clientes?token=123&activos=false';
             
         }
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     activar.addEventListener("click",function(){
         const id_cliente = document.getElementById("estatus_clientes").value;
         
-        axios.put("http://localhost:3000/clientes/"+id_cliente+"/activar?token=123").then(respuesta =>{
+        axios.put("https://paqueteria-backend.herokuapp.com/clientes/"+id_cliente+"/activar?token=123").then(respuesta =>{
             alert("Cliente activado");
         }).catch(err =>{
             alert("No se pudo activar al cliente");
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     desactivar.addEventListener("click",function(){
         const id_cliente = document.getElementById("estatus_clientes").value;
         
-        axios.delete("http://localhost:3000/clientes/"+id_cliente+"?token=123").then(respuesta =>{
+        axios.delete("https://paqueteria-backend.herokuapp.com/clientes/"+id_cliente+"?token=123").then(respuesta =>{
             alert("Cliente desactivado");
         }).catch(err =>{
             alert("No se pudo desactivar al cliente");
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     buscar.addEventListener("click",function(){
         const buscar_cliente = document.getElementById("buscar_cliente").value;
-        url = "http://localhost:3000/clientes/"+buscar_cliente+"?token=123";
+        url = "https://paqueteria-backend.herokuapp.com/clientes/"+buscar_cliente+"?token=123";
         listarUnCliente(contenedor_clientes,url);
     })
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     const contenedor_empleados = document.getElementById('contenedor_empleados');
 
-    var url_empleados = 'http://localhost:3000/empleados?token=123';
+    var url_empleados = 'https://paqueteria-backend.herokuapp.com/empleados?token=123';
     
 
     listarEmpleados(contenedor_empleados,url_empleados);
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     const todos_empleados = document.getElementById("todos_empleados");
 
     todos_empleados.addEventListener("click",function(){
-        url_empleados = "http://localhost:3000/empleados?token=123";
+        url_empleados = "https://paqueteria-backend.herokuapp.com/empleados?token=123";
         listarEmpleados(contenedor_empleados,url_empleados);
     })
 
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     buscar_empleado_boton.addEventListener("click",function(){
         const buscar_empleado = document.getElementById("buscar_empleado").value;
-        url_empleados = "http://localhost:3000/empleados/"+buscar_empleado+"?token=123";
+        url_empleados = "https://paqueteria-backend.herokuapp.com/empleados/"+buscar_empleado+"?token=123";
         listarUnEmpleado(contenedor_empleados,url_empleados);
     })
 
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     desactivar_empleado_boton.addEventListener("click",function(){
         const desactivar_empleado = document.getElementById("desactivar_empleado").value;
         
-        axios.delete("http://localhost:3000/empleados/"+desactivar_empleado+"?token=123").then(respuesta =>{
+        axios.delete("https://paqueteria-backend.herokuapp.com/empleados/"+desactivar_empleado+"?token=123").then(respuesta =>{
             alert("empleado eliminado");
         }).catch(err =>{
             alert("No se pudo eliminar al empleado");
@@ -123,24 +123,24 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     const contenedor_cotizaciones = document.getElementById('contenedor_cotizaciones');
 
-    var url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123';
+    var url_cotizaciones = 'https://paqueteria-backend.herokuapp.com/cotizaciones?token=123';
 
     listarCotizaciones(contenedor_cotizaciones,url_cotizaciones);
 
     opciones_cotizaciones.addEventListener("change", function() {
         if(opciones_cotizaciones.value === "todos")
         {
-            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123';
+            url_cotizaciones = 'https://paqueteria-backend.herokuapp.com/cotizaciones?token=123';
             
         }
 
         else if(opciones_cotizaciones.value === "activos"){
-            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123&activos=true';
+            url_cotizaciones = 'https://paqueteria-backend.herokuapp.com/cotizaciones?token=123&activos=true';
             
         }
 
         else if(opciones_cotizaciones.value === "no_activos"){
-            url_cotizaciones = 'http://localhost:3000/cotizaciones?token=123&activos=false';
+            url_cotizaciones = 'https://paqueteria-backend.herokuapp.com/cotizaciones?token=123&activos=false';
             
         }
 
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     activar_cotizacion.addEventListener("click",function(){
         const id_cotizacion = document.getElementById("estatus_cotizaciones").value;
         
-        axios.put("http://localhost:3000/cotizaciones/"+id_cotizacion+"/activar?token=123").then(respuesta =>{
+        axios.put("https://paqueteria-backend.herokuapp.com/cotizaciones/"+id_cotizacion+"/activar?token=123").then(respuesta =>{
             alert("Cotización activada");
         }).catch(err =>{
             alert("No se pudo activar la cotización");
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded',() =>{
     desactivar_cotizacion.addEventListener("click",function(){
         const id_cotizacion = document.getElementById("estatus_cotizaciones").value;
         
-        axios.delete("http://localhost:3000/cotizaciones/"+id_cotizacion+"?token=123").then(respuesta =>{
+        axios.delete("https://paqueteria-backend.herokuapp.com/cotizaciones/"+id_cotizacion+"?token=123").then(respuesta =>{
             alert("Cotización desactivada");
         }).catch(err =>{
             alert("No se pudo desactivar la cotización");
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded',() =>{
 
     buscar_cotizacion_boton.addEventListener("click",function(){
         const buscar_cotizacion = document.getElementById("buscar_cotizacion").value;
-        url_cotizaciones = "http://localhost:3000/cotizaciones/"+buscar_cotizacion+"?token=123";
+        url_cotizaciones = "https://paqueteria-backend.herokuapp.com/cotizaciones/"+buscar_cotizacion+"?token=123";
         listarUnaCotizacion(contenedor_cotizaciones,url_cotizaciones);
     })
 

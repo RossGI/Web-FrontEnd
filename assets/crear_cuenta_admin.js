@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded',() =>{
             
         }
 
-        axios.post('http://localhost:3000/empleados?token=123',datos).then(respuesta =>{
+        axios.post('https://paqueteria-backend.herokuapp.com/empleados?token=123',datos).then(respuesta =>{
             console.log('Token',respuesta.data);
             window.location = '/login_admin.html';
         });
